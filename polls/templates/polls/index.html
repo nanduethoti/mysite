@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head><title style="color: brown;">Home Page</title></head>
+<body style="color: burlywood;">
+    <h1 style="text-align: center ;background-color: black; color: blanchedalmond;">INDEX PAGE</h1>
+    <br>
+    {% if latest_question_list %}
+    <ul>
+        {% for question in latest_question_list %}
+            <!--<li><a href="/polls/{{question.id}}">{{question.question_text}}</a></li>-->
+            <li><a href="{% url 'polls:detail' question.id %}">{{question.question_text}}</a></li>
+
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p style="background-color: cadetblue;color: crimson;">No polls are available</p>
+    {% endif %}    
+</body>
+</html>

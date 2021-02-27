@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head><title style="color: brown;">Detail Page</title></head>
+<body style="color: burlywood;">
+    <h1 style="text-align: center ;background-color: black; color: blanchedalmond;">DETAIL Page</h1>
+    <br>
+    <h1>{{question.question_text}}</h1><ul>
+    {% for choice in question.choice_set.all %}
+        <li>{{ choice.choice_text }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
